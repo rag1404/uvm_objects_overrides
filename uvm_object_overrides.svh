@@ -89,7 +89,8 @@
       uvm_factory factory = uvm_factory::get();
        super.build_phase(phase);
       env = my_env::type_id::create("env", this);
-      set_type_override_by_type(transaction::get_type(), extended_transaction::get_type());
+    //  set_type_override_by_type(transaction::get_type(), extended_transaction::get_type());
+       set_type_override (transaction::type_name, extended_transaction::type_name);
       factory.print();  
     endfunction : build_phase
 
